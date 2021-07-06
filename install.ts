@@ -13,12 +13,12 @@ const repoUrl = "https://github.com/mrLuisFer/neovim-dotfiles.git";
 
 const init = async () => {
   printDim("⚡ Welcome to the CLI to clone mrLuisFer configuration!");
-  print("🦄 Commands");
+  printInfo("🦄 You can write any of the following Commands");
+
+  // prompt("Write a command:");
 
   // Test
   printWarn("some");
-
-  // prompt("Write a command:");
 
   // print("Clonando Configuracion!");
   print(args);

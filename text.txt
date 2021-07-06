@@ -1,0 +1,2 @@
+Deno command:
+ deno run --unstable --allow-read --allow-net --allow-run .\install.ts
