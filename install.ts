@@ -3,22 +3,23 @@ import { clone } from "https://deno.land/x/clone/mod.ts";
 import {
   printInfo,
   print,
-  printError,
-  printWarn,
   printSucces,
-  printDim,
+  printMagenta
 } from "./src/print.ts";
+import {commands} from './src/commands.ts'
 
 const repoUrl = "https://github.com/mrLuisFer/neovim-dotfiles.git";
 
 const init = async () => {
-  printDim("⚡ Welcome to the CLI to clone mrLuisFer configuration!");
+  printSucces("⚡ Welcome to the CLI to clone mrLuisFer configuration!");
   printInfo("🦄 You can write any of the following Commands");
-
+  
+  
+   commands.forEach((command:string) => {
+     printMagenta(`--${command}`)
+   })
+  // printMagenta(commands)
   // prompt("Write a command:");
-
-  // Test
-  printWarn("some");
 
   // print("Clonando Configuracion!");
   print(args);

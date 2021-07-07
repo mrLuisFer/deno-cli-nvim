@@ -1,1 +1,4 @@
-export const commands = [];
+export const commands: Array<string> = [
+  "help",
+  "info"
+];

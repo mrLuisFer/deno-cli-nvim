@@ -10,9 +10,6 @@ export const printWarn = (param: any) => print(Colors.yellow(param));
 
 export const printSucces = (param: any) => print(Colors.green(param));
 
-/**
- * The text emits only a small amount of light.
- * @param {string} param - str text to dim
- * @returns {void}
- */
 export const printDim = (param: string) => print(Colors.dim(param));
+
+export const printMagenta = (param: any) => print(Colors.brightMagenta(param))
