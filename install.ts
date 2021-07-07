@@ -4,22 +4,34 @@ import {
   printInfo,
   print,
   printSucces,
-  printMagenta
+  printMagenta,
+  printWarn,
+  printError,
 } from "./src/print.ts";
-import {commands} from './src/commands.ts'
+import { commands } from "./src/commands.ts";
+import { validations } from "./src/validations.ts";
 
 const repoUrl = "https://github.com/mrLuisFer/neovim-dotfiles.git";
 
 const init = async () => {
-  printSucces("⚡ Welcome to the CLI to clone mrLuisFer configuration!");
+  printSucces("⚡ Welcome to the CLI to clone mrLuisFer configuration! \n");
   printInfo("🦄 You can write any of the following Commands");
-  
-  
-   commands.forEach((command:string) => {
-     printMagenta(`--${command}`)
-   })
+
+  commands.forEach((command) => {
+    printMagenta(`${command.commandName}`);
+  });
   // printMagenta(commands)
-  // prompt("Write a command:");
+  const commandValue = prompt("Write a command: \n");
+
+  if (commandValue !== undefined && commandValue !== null) {
+    try {
+      validations(commandValue);
+    } catch (error) {
+      printError(error);
+    }
+  } else {
+    printError("Please enter a valid command!");
+  }
 
   // print("Clonando Configuracion!");
   print(args);
