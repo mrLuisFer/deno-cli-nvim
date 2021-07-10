@@ -17,7 +17,7 @@ const init = async () => {
   commands.forEach((command) => {
     printMagenta(`${command.commandName}`);
   });
-  // printMagenta(commands)
+
   const commandValue = prompt("Write a command: \n");
 
   if (commandValue !== undefined && commandValue !== null) {
